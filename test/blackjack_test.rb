@@ -1,7 +1,7 @@
 require 'test_helper'
-require 'life'
+require 'blackjack'
 
-class LifeTest < MiniTest::Test
+class BlackjackTest < MiniTest::Test
   def test_hello
     pass
   end
