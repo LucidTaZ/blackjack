@@ -1,3 +1,5 @@
+# OBJECTS
+
 class Game
   @@suits = {
     hearts: 9829.chr('utf-8'),
@@ -41,7 +43,9 @@ class Player
   end
 
   def show_hand
+    puts ''
     puts @hand.join(' ') + " (#{hand_value} points)"
+    puts ''
   end
 
   def hand_value
@@ -74,9 +78,26 @@ class Card
   end
 end
 
+# CODE
+
 @game = Game.new
 @player = Player.new 'Rik'
 
 @game.deal @player, 2
 puts 'Your starting hand is:'
 @player.show_hand
+
+@answer = ''
+until @answer == 'N' do
+  puts 'Would you like another card? Y/N'
+  @answer = gets.chomp
+  if @answer == "Y"
+    @game.deal @player, 1
+    puts 'Your hand is now:'
+    @player.show_hand
+  elsif @answer == 'N'
+    puts 'Ok, let\'s see what the house has got:'
+  else
+    puts 'please answer Y or N'
+  end
+end
