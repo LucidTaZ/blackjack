@@ -26,7 +26,6 @@ class Deck
 
   def draw
     @contents.concat @discards.shuffle
-    #require 'pry'; binding.pry
     @discards = []
     @contents.shift
   end

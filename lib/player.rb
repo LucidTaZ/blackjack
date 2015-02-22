@@ -21,7 +21,13 @@ class Player
   end
 
   def hand_value
-    @holding.map{|card|card.value}.reduce(0, :+)
+    value = @holding.map{|card|card.value}.reduce(0, :+)
+    n_aces = @holding.select{|card|card.ace?}.count
+    while value < 10 && n_aces > 0 do
+      value += 10
+      n_aces -= 1;
+    end
+    value
   end
 
   def alive?
