@@ -34,6 +34,7 @@ class Card
   end
 
   def value
+    # Deciding whether an ace is 1 or 11 happens in the Player class
     @value
   end
 
@@ -51,5 +52,9 @@ class Card
      else
       "#{@face} of #{@suit}"
     end
+  end
+
+  def ace?
+    @face == FACE_ACE
   end
 end
