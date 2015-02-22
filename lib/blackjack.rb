@@ -1,1 +1,4 @@
-# Your code goes here
+require_relative "game.rb"
+
+g = Game.new
+g.play
